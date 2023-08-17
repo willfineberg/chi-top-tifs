@@ -1,8 +1,11 @@
 # Chicago Top TIFs Web App
 Chicago Top TIFs is a Google Earth Engine Web App designed to illuminate the finances of the City of Chicago. Please review ["App Features"](https://github.com/willfineberg/chi-top-tifs#app-features) and ["What Are These Variables?"](https://github.com/willfineberg/chi-top-tifs#what-are-these-variables) to better understand the [Chicago Top TIFs Web App](https://wtfineberg.users.earthengine.app/view/toptifs).
 
+Chicago Top TIFs Web App Full URL: https://wtfineberg.users.earthengine.app/view/toptifs
+Google Earth Engine Snapshot: 
+
 ### App Features
-- **Top/Bottom Five Outlines**
+- **Modify Map (Top/Bottom Five Outlines)**
   - The app will find the largest five and smallest five values across all TIFs based on your selections. Changing the Selected Year or Variable (top-left) will modify the outlines appropriately. 
     - For example, the default map highlights the five TIFs with the largest Property Tax Extraction in 2022 as well as the five TIFs with the smallest Property Tax Extraction values in 2022.
 - **TIF Selection**
