@@ -1,5 +1,5 @@
 # Chicago Top TIFs Web App
-Chicago Top TIFs is a Google Earth Engine Web App designed to illuminate the finances of the City of Chicago. Please review ["What Are These Variables?"](https://github.com/willfineberg/chi-top-tifs/edit/main/README.md#what-are-these-variables) before utilizing the [Chicago Top TIFs Web App](https://wtfineberg.users.earthengine.app/view/toptifs).
+Chicago Top TIFs is a Google Earth Engine Web App designed to illuminate the finances of the City of Chicago. Please review ["What Are These Variables?"](https://github.com/willfineberg/chi-top-tifs#where-is-the-data-from) before utilizing the [Chicago Top TIFs Web App](https://wtfineberg.users.earthengine.app/view/toptifs).
 
 ## What Are TIFs?
 TIF stands for Tax Increment Financing. TIF Districts are designated by the municipality to capture property taxes for a fixed period of time. The captured property taxes are used to boost development in the designated TIF district. Read more about what TIFs are and how they work from [The CivicLab](https://www.civiclab.us/):
