@@ -16,8 +16,7 @@ Chicago Top TIFs is a Google Earth Engine Web App designed to illuminate the fin
     - Bottom-Left UI: This panel is populated with a Bar Chart that visualizes all values of the currently selected variable for the TIF that was clicked.
 
 ### What Are These Variables?
-Data for Chicago TIF Districts are released once per year. A yearly report for each TIF contains a variety 
-Here are explanations for each data variable accessed in the [Chicago Top TIFs Web App](https://wtfineberg.users.earthengine.app/view/toptifs):
+Data for Chicago TIF Districts are released once per year. A yearly report for each TIF contains a variety of different metrics, but the ones listed below are the values that we have obtained from all PDFs from 2010 through 2022. Please refer to these explanations while using the [Chicago Top TIFs Web App](https://wtfineberg.users.earthengine.app/view/toptifs):
 | Variable                               | Explanation                                 |
 | -------------------------------------- | ------------------------------------------- |
 | **TIF Lifespan**                       | The starting year through the proposed ending year. |
