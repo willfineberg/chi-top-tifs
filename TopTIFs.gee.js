@@ -25,13 +25,17 @@ var matchingRow = null;
 var rowDictionary = {};
 
 // Define Styling for Subheadings
+var bigStyle = { textAlign: 'center', fontWeight: 'bold', fontSize: '18px', margin: '0 0 4px 0', padding: '0' }
 var subStyle = { fontWeight: 'bold', fontSize: '14px', margin: '4px 0', color: 'black', border: '0px'};
 var highlightSubStyle = { fontWeight: 'bold', fontSize: '14px', margin: '4px 4px 4px 4px', border: '2px solid #915a07'};
 var labelStyle = { whiteSpace: 'pre-wrap', margin: '2px 0 1px 10px' };
 // Define Styling for Map Layers (Shapes)
-var topHighlight = { color: '00ff00', fillColor: 'f2ef573a', width: 1.5, lineType: 'solid' };
-var btmHighlight = { color: 'ff0000', fillColor: 'f2ef573a', width: 1.5, lineType: 'solid' };
-var selHighlight = { color: '16d3f9', fillColor: 'f5e16452', width: 3, lineType: 'solid' };
+var topColor = '00ff00';
+var btmColor = 'ff0000';
+var selColor = '16d3f9';
+var topHighlight = { color: topColor, fillColor: 'f2ef573a', width: 1.5, lineType: 'solid' };
+var btmHighlight = { color: btmColor, fillColor: 'f2ef573a', width: 1.5, lineType: 'solid' };
+var selHighlight = { color: selColor, fillColor: 'f5e16452', width: 3, lineType: 'solid' };
 // #16f9e7 cyan (brighter than #16d3f9)
 // #fffda0 orange/yellow (more mild than #f2ef57)
 
@@ -149,6 +153,8 @@ var variableSelect = ui.Select({
 // Build a Widget Panel to hold Selects; add it to UI
 var selectPanel = ui.Panel({
   widgets: [
+    ui.Label("Modify Map", { textAlign: 'center', fontWeight: 'bold', fontSize: '18px', margin: '0 0 5px 35px'}),
+    // ui.Label("M", labelStyle),
     ui.Label('Select a Variable: ', subStyle),
     variableSelect,
     ui.Label('Select a Year: ', subStyle), 
@@ -265,6 +271,55 @@ propertyOrder_toDisplay.forEach(function(variableName, index) {
   labelsByProperty[variableName] = curDataLabel;
 });
  
+/********************************  Legend - Bottom-Right UI  ********************************/
+
+// set position of panel
+var legend = ui.Panel({
+  style: {
+    position: 'bottom-right',
+    padding: '8px 15px'
+  }
+});
+// Create legend title
+var legendTitle = ui.Label({
+  value: 'Outline Legend',
+  style: bigStyle,
+});
+// Add the title to the panel
+legend.add(legendTitle);
+// Creates and styles 1 row of the legend.
+var makeRow = function(color, name) {
+      // Create the label that is actually the colored box.
+      var colorBox = ui.Label({
+        style: {
+          backgroundColor: '#' + color,
+          // Use padding to give the box height and width.
+          padding: '8px',
+          margin: '0 0 4px 0'
+        }
+      });
+      // Create the label filled with the description text.
+      var description = ui.Label({
+        value: name,
+        style: {margin: '0 0 4px 6px'}
+      });
+      // return the panel
+      return ui.Panel({
+        widgets: [colorBox, description],
+        layout: ui.Panel.Layout.Flow('horizontal')
+      });
+};
+//  Palette with the colors
+var palette =[topColor, btmColor, selColor];
+// name of the legend
+var names = ['Top 5 Values','Bottom 5 Values','Selected TIF'];
+// Add color and and names
+for (var i = 0; i < 3; i++) {
+  legend.add(makeRow(palette[i], names[i]));
+  }  
+// add legend to map (alternatively you can also print the legend to the console)  
+map.add(legend);  
+
  
 /********************************  FUNCTION for Bottom-Left UI Element (Chart and Panel)  ********************************/
 
@@ -523,3 +578,19 @@ function clickEventHandler(coords) {
 }
 
 map.onClick(clickEventHandler);
+
+
+
+////////////////////////////////// CHART STUFF ///////////////////////////////////
+      // Build a ui.Chart for the selected TIF
+      // var chartData = csvData.filter(ee.Filter.eq('tif_number', clickedTIFNumber)).getInfo()['features'];
+      // print(chartData);
+      // Extract x and y values from the chartData dictionary
+      // var xValues = chartData['tif_year']; // Assuming 'tif_year' is a key in the dictionary
+      // var yValues = chartData[selectedVariable]; // Assuming selectedVariable is a valid key
+      // print(xValues, yValues);
+      // Create the chart
+      // var chart = ui.Chart.array.values(yValues, 0, xValues)
+      //   .setChartType('LineChart')
+      
+      // chartPanel.add(chart);
