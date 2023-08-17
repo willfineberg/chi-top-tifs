@@ -1,7 +1,7 @@
 # Chicago Top TIFs Web App
 Chicago Top TIFs is a Google Earth Engine Web App designed to illuminate the finances of the City of Chicago. Please review ["App Features"](https://github.com/willfineberg/chi-top-tifs#app-features) and ["What Are These Variables?"](https://github.com/willfineberg/chi-top-tifs#what-are-these-variables) to better understand the [Chicago Top TIFs Web App](https://wtfineberg.users.earthengine.app/view/toptifs).
 
-- Chicago Top TIFs Web App Full URL: https://wtfineberg.users.earthengine.app/view/toptifs
+- Chicago Top TIFs Web App URL: https://wtfineberg.users.earthengine.app/view/toptifs
 - Google Earth Engine Snapshot: https://code.earthengine.google.com/f132f5ff21f5b0b2d9e273e950d41d18
 
 ### App Features
